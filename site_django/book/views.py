@@ -38,7 +38,7 @@ def editar_libro(request, libro_id):
             form.save() # guarda los datos en la base de datos
             return redirect('lista_libros') # redirecciona a lista de libros
         else:  # si el formulario no es valido
-            messages.error(request, 'Módifica los datos de ingreso') # muestra un mensaje
+            messages.error(request, 'Modifica los datos de ingreso') # muestra un mensaje
             return HttpResponseRedirect(reverse('editar_libro', args=[book.id])) # redirecciona a la pagina
     else: # si el metodo es GET
         form = BookForm(instance=book) # instancia del formulario con los datos del libro a editar
